@@ -1,0 +1,74 @@
+<mvc:View controllerName="ovly.data.binding.resume.controller.View1" xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{title}">
+					<content>
+						<Text text="You're using system {device>/os/name} and browser {device>/browser/name}"/>
+						<form:SimpleForm>
+							<form:content>
+								<Label text="Nome"/>
+								<Text text="{/name}"/>
+								<Label text="Sobrenome"/>
+								<!--<Text text="{/lastName}"/>-->
+								<Text text="{ path:'/lastName', formatter:'.convertUpper' }"/>
+								<core:Title text="{i18n>address}"/>
+								<Label text="Rua"/>
+								<Text text="{/address/street/name}, {/address/street/number}"/>
+								<Label text="Cidade"/>
+								<Text text="{/address/city}"/>
+								<Label text="Estado"/>
+								<Text text="{/address/state/name} ({/address/state/abbreviation})"/>
+							</form:content>
+						</form:SimpleForm>
+						<Panel id="panel_comp" expandable="true" expanded="false" headerText="{ path: 'panelSkills', model: 'i18n' }">
+							<content>
+								<List items="{/skills}">
+									<items>
+										<StandardListItem title="{name}"/>
+									</items>
+								</List>
+							</content>
+						</Panel>
+						<Panel id="panel_emp" expandable="true" expanded="false" headerText="{ path: 'panelComps', model: 'i18n' }">
+							<content>
+								<List items="{/companies}">
+									<items>
+										<StandardListItem title="{name}" info="{job}"/>
+									</items>
+								</List>
+							</content>
+						</Panel>
+						<Panel id="panel_repos" expandable="true" expanded="false" headerText="{ path: 'panelRepos', model: 'i18n' }">
+							<content>
+								<Table id="tblGithub" items="{ path: '/', model: 'gitHubModel'}">
+									<columns>
+										<Column>
+											<Text text="{i18n>githubRepoName}"/>
+										</Column>
+										<Column>
+											<Text text="{i18n>githubRepoDescription}"/>
+										</Column>
+										<Column visible="{device>/system/desktop}">
+											<Text text="{i18n>githubRepoURL}"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Title text="{gitHubModel>name}"/>
+												<Text text="{gitHubModel>description}"/>
+												<Link text="Go to repo" href="{gitHubModel>url}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</content>
+						</Panel>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

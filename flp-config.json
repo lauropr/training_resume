@@ -1,0 +1,34 @@
+{
+    "application": {
+        "id": "",
+        "title": "ovly.data.binding.resume.resume",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#resume-Display",
+        "navigationComponentName": "ovly.data.binding.resume",
+        "intentSemanticObject": "resume",
+        "intentAction": "Display",
+        "html5ApplicationName": "resume",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "5df8b5ce-4525-4e86-9e7c-c8c4df2f37dd"
+        ],
+        "contentPackages": [
+            "354726b9-9e47-4afa-8ffb-eda5f6a0031a"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "My resume",
+        "subtitle": "Resume",
+        "searchKeywords": "My resume,Resume",
+        "displayIconUrl": "sap-icon://personnel-view",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}
